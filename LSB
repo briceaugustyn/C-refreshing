@@ -1,0 +1,49 @@
+/**
+ * C program to check Least Significant Bit (LSB) of a number using bitwise operator
+ */
+
+#include <stdio.h>
+
+int main()
+{
+    int number=0;
+    
+    printf("enter your number : ");
+    scanf("%d", &number);
+    
+    if (number & 1)
+    printf("LSB of %i is set (1)", number);
+    else
+    printf("LSB of %i is unset (0)", number);
+    
+    return 0;
+}
+
+
+
+
+
+//************************************************************
+
+/**
+ * C program to check Least Significant Bit (LSB) of a number using bitwise operator
+ */
+
+#include <stdio.h>
+
+int main()
+{
+    int num;
+
+    /* Input number from user */
+    printf("Enter any number: ");
+    scanf("%d", &num);
+
+    /* If (num & 1) evaluates to 1 */
+    if(num & 1)
+        printf("LSB of %d is set (1).", num);
+    else
+        printf("LSB of %d is unset (0).", num);
+
+    return 0;
+}
