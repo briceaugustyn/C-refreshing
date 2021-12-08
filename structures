@@ -1,0 +1,22 @@
+/******************************************************************************
+
+              Structures in C
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+typedef struct{   // define typedef struct
+   float re;
+   float im;
+}
+complex; // name typedef complex as struct
+
+complex x ={1.25, 2.50}; //Creeate instance
+
+int main()
+{
+   printf("x.re = %.2f\n", x.re);
+   printf("x.im = %.2f\n", x.im);
+    return 0;
+}
