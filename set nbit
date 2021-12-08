@@ -1,0 +1,56 @@
+/**
+Write a C program to input any number from user and set nth bit of the given number as 1.
+How to set nth bit of a given number using bitwise operator in C programming. 
+Setting nth bit of a given number using bitwise operator.
+ */
+
+#include <stdio.h>
+
+int main()
+{
+    int num, n;
+
+    /* Input number from user */
+    printf("Enter any number: ");
+    scanf("%d", &num);
+    /* Input number from user */
+    printf("Which bit to set to 1 ? ");
+    scanf("%d", &n);
+    
+    /* Perform bitwise AND with n bit mask */
+    num=num | 1<<n;
+    printf("result is %d.",num);
+    
+    return 0;
+}
+
+//****************************************************************************************************************************************************
+// SOLUTIONS
+
+/**
+ * C program to set the nth bit of a number
+ */
+
+#include <stdio.h>
+
+int main()
+{
+    int num, n, newNum;
+
+    /* Input number from user */
+    printf("Enter any number: ");
+    scanf("%d", &num);
+
+    /* Input bit position you want to set */
+    printf("Enter nth bit to set (0-31): ");
+    scanf("%d", &n);
+
+    /* Left shift 1, n times and perform bitwise OR with num */
+    newNum = (1 << n) | num;
+
+    printf("Bit set successfully.\n\n");
+    printf("Number before setting %d bit: %d (in decimal)\n", n, num);
+    printf("Number after setting %d bit: %d (in decimal)\n", n, newNum);
+
+    return 0;
+}
