@@ -1,0 +1,36 @@
+/******************************************************************************
+
+              Bit Fields
+
+*******************************************************************************/
+
+#include <stdio.h>
+/*
+typedef struct {   
+    unsigned int bit0: 1;    //: column is important
+    unsigned int bit1to3: 3;
+    unsigned int bit4: 1;
+    unsigned int bit5: 1;
+    unsigned int bit6to7: 3;
+}byteBits;
+*/
+
+struct byteBits
+{
+    unsigned int b1volts: 1;       //x |1|1|1|0|1|0|0|1|
+    unsigned int b1amps: 1;    
+    unsigned int b1humid: 2;
+    unsigned int b1temp: 1;
+    unsigned int b1tach: 3;
+} x;
+
+
+int main(void)
+{
+    x.b1volts=1; //may contains values from 0 to 1 a
+    x.b1amps=0; //may contains values from 0 to 1 b
+    x.b1humid=0b10; //may contains values from 0 to 3 c
+    x.b1temp=0x0; //may contains values from 0 to 1 d
+    x.b1tach=7; //may contains values from 0 to 7 e
+    return 0;
+}
