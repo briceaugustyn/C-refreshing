@@ -1,0 +1,91 @@
+/**
+ * 
+ * Write a C program to input any number from user and check whether 
+ * Most Significant Bit (MSB) of given number is set (1) or not (0). 
+ * How to check whether Most Significant Bit of any given number is set 
+ * or not using bitwise operator in C programming.
+ * C program to get the status of the most significant bit of a number.
+
+ * 
+ * Logic to check Most Significant Bit (MSB) of a number
+We use bitwise AND & operator to check status of any bit. Bitwise AND operation evaluate each bit of resultant value as 1, if corresponding bit of operands is 1.
+
+Step by step descriptive logic to check MSB of a number.
+
+
+
+Read more - How to find size of a data type using sizeof() operator.
+
+
+
+ * 
+ * 
+ */
+
+#include <stdio.h>
+
+int main()
+{
+    int number=0;
+    
+    printf("enter your number : ");
+                                    //Input a number from user. Store it in some variable say num.
+    scanf("%d", &number);
+                                    //Find number of bits required to represent an integer in memory. 
+                                    //Use sizeof() operator to find size of integer in bytes. 
+                                    //Then multiply it by 8 to get number of bits required by integer. 
+                                    //Store total bits in some variable say bits = sizeof(int) * 8;.
+    int nb_bits=sizeof(number)*8;
+    printf("number of bits %d\n",nb_bits);
+    
+                                    // I will have to use a shift number of bits on the 1<< n times
+                                    //To get MSB of the number, move first bit of 1 to highest order. 
+                                    //Left shift 1 bits - 1 times and 
+                                    //store result in some variable say msb = 1 << (bits - 1).
+    int mask=1<<nb_bits-1;           //int n_bit = 1<<n
+   
+                                    
+    printf("mask %d\n",mask);
+    
+                                    //If bitwise AND operation num & msb evaluate to 1 then MSB of num is set 
+                                    //otherwise not.
+    if (number & mask)             
+   
+    printf("MSB of %d is set (1)", number);
+    else
+    printf("MSB of %d is unset (0)", number);
+    
+    return 0;
+}
+
+
+
+
+//*************************************************************************************************************************************************
+// SOLUTION
+/**
+ * C program to check Most Significant Bit (MSB) of a number using bitwise operator
+ */
+
+#include <stdio.h>
+#define BITS sizeof(int) * 8 // Total bits required to represent integer
+
+int main()
+{
+    int num, msb;
+
+    /* Input number from user */
+    printf("Enter any number: ");
+    scanf("%d", &num);
+
+    /* Move first bit of 1 to highest order */
+    msb = 1 << (BITS - 1);
+
+    /* Perform bitwise AND with msb and num */
+    if(num & msb)
+        printf("MSB of %d is set (1).", num);
+    else
+        printf("MSB of %d is unset (0).", num);
+
+    return 0;
+}
