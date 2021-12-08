@@ -1,0 +1,29 @@
+/******************************************************************************
+
+              Unions (not recognized with the online compiler)
+
+*******************************************************************************/
+
+union
+{
+    unsigned int u16ADRead;
+     struct{
+    unsigned char u8ADreadLow;
+    unisgned char u8ADRreadHigh;
+    }
+    STRUCT_ADreadMembers;
+    
+}UNION_ADRead;
+
+
+
+
+int main(void)
+{
+
+//For A/D reading in two separate registers:
+UNION_ADRead.STRUCT_ADReadMembers.u8ADReadHigh= ADRESH;
+UNION_ADRead.STRUCT_ADReadMembers.u8ADReadLow= ADRESL;
+
+    return 0;
+}
