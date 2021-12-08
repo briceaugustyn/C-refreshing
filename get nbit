@@ -1,0 +1,31 @@
+/**
+ Write a C program to input any number from user and check whether nth bit of the given number 
+ //is set (1) or not (0). How to check whether nth bit of a given number is set or unset using bitwise operator 
+ //in C programming. 
+ //C program to get the status of nth bit of a number.
+ */
+
+#include <stdio.h>
+
+int main()
+{
+    int num, n;
+
+    /* Input number from user */
+    printf("Enter any number: ");
+    scanf("%d", &num);
+    /* Input number from user */
+    printf("Which bit to check: ? ");
+    scanf("%d", &n);
+    
+  
+
+    /* Perform bitwise AND with n bit mask */
+    if(num & 1<<n)
+    //nth bit of a number
+        printf("bit %d of %d is set (1).",n, num);
+    else
+        printf("bit %d of %d is unset (0).",n, num);
+
+    return 0;
+}
