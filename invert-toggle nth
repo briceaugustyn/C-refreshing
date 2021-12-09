@@ -1,0 +1,32 @@
+// SOLUTIONS
+
+/**
+ * Write a C program to input any number from user and toggle or invert or flip nth bit of the given number using bitwise operator. How to toggle nth bit of a given number using bitwise operator in C programming. C program set nth bit of a given number if it is unset otherwise unset if it is set.
+
+ */
+
+#include <stdio.h>
+
+int main()
+{
+    int num, n, newNum;
+
+    /* Input number from user */
+    printf("Enter any number: ");
+    scanf("%d", &num);
+
+    /* Input bit position you want to set */
+    printf("Enter nth bit to toggle (0-31): ");
+    scanf("%d", &n);
+
+    /* Left shift 1, n times and perform bitwise XOR with num */
+    
+    
+    newNum = (1 << n) ^ num;
+
+    printf("Bit toggle successfully.\n\n");
+    printf("Number before toggle %d bit: %d (in decimal)\n", n, num);
+    printf("Number after toggle %d bit: %d (in decimal)\n", n, newNum);
+
+    return 0;
+}
