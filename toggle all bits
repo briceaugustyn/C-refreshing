@@ -1,0 +1,28 @@
+// SOLUTIONS
+
+/**
+ * Write a C program to input any number from user and toggle or invert or flip nth bit
+ * of the given number using bitwise operator. 
+ * 
+ */
+
+#include <stdio.h>
+
+int main()
+{
+    int num, n, newNum;
+
+    // Input number from user
+    printf("Enter any number: ");
+    scanf("%d", &num);
+
+    
+    // flip bits means using Bitwise Complement 
+    newNum =~ num;
+
+    printf("Bits toggle successfully.\n\n");
+    printf("Number before toggle all bits: %d (in decimal)\n", num);
+    printf("Number after toggle all bits: %d (in decimal)\n", newNum);
+
+    return 0;
+}
