@@ -1,0 +1,79 @@
+/**
+ * Write a C program to input a number from user and count total number of ones (1s) and zeros (0s) 
+ * in the given number using bitwise operator. 
+ * How to count zeros and ones in a binary number using bitwise operator in C programming.
+ * 
+ */
+
+#include <stdio.h>
+
+int main()
+{
+    int num=0, nbBits=0, newNum=0, nbOne=0, nbZero=0, i=0, mask=0;
+
+    // Input number from user
+    printf("Enter any number: \n");
+    scanf("%d", &num);
+
+    
+    // Calculate the numbr of Bits 
+    nbBits= sizeof(num)*8;
+
+    // loop nbBits times and check with bitwise | & the bits from num
+    
+    
+    for (i=0;i<nbBits;i++){
+        //check if bit nbBits ==1
+        mask=1;
+        if (mask<<i & num)
+        nbOne++;
+        //          increment nbOne
+        //else == 0 increment nbZero
+        else
+        nbZero++;
+    }
+    
+    printf("Number of ones: %d \n", nbOne);
+    printf("Number of zeros: %d \n", nbZero);
+
+    return 0;
+}
+
+
+//******************************************************************************
+// SOLUTIONS
+/**
+ * C program to count total of zeros and ones in a binary number using bitwise operator
+ */
+
+#include <stdio.h>
+#define INT_SIZE sizeof(int) * 8 /* Total number of bits in integer */
+
+int main()
+{
+    int num, zeros, ones, i;
+
+    /* Input number from user */
+    printf("Enter any number: ");
+    scanf("%d", &num);
+
+    zeros = 0;
+    ones = 0;
+
+    for(i=0; i<INT_SIZE; i++)
+    {
+        /* If LSB is set then increment ones otherwise zeros */
+        if(num & 1)
+            ones++;
+        else
+            zeros++;
+
+        /* Right shift bits of num to one position */
+        num >>= 1;
+    }
+
+    printf("Total zero bit is %d\n", zeros);
+    printf("Total one bit is %d", ones);
+
+    return 0;
+}
