@@ -1,0 +1,67 @@
+
+
+/**
+ The purpose of this exercice is to build a formated packet
+ serializating or marshalling data to a byte stream from
+ source data and display the formated packet the the screen.
+ Add any ssumptions made as in-line comments
+ * 
+ */
+
+#include <stdio.h>
+
+#define DLE 0X10
+#define ID 0x21
+#define ETX 0x03
+#define BUF_LEN ( )
+
+//source data 
+typedef struct{
+    float latitude;
+    float longitute;
+    float altitude;
+    float timeoffix;
+    float pitch;
+    float roll;
+    float heading;
+    float airspeed;
+}Position;
+
+// Initilaize each element of the source data with dummy values
+
+void initData(Position *uav)
+{
+    position->latitiude= 0.1;
+    position->longitude=0.2;
+    position->timeoffix=0.3;
+    postion->pitch=0.4;
+    position->roll=0.5;
+    position->heading=0.6;
+    position->airspeed=0.7;
+}
+
+
+int buildPacket(&uav, buf)
+{
+    int i,iter;
+        
+
+    
+}
+
+
+int main()
+{
+Position uav;
+unisgned char *buf[BUF_LEN];
+int len;
+
+initData(&uav);
+len = buildPacket(&uav, len);
+
+displayPacket(buf, len);
+
+return 0;
+    
+
+}
